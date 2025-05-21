@@ -1,0 +1,129 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": " Porject Swagger",
+        "description": "",
+        "version": "v1"
+    },
+    "host": "",
+    "basePath": "/",
+    "schemes": ["http", "https"],
+    "tags": [
+        {
+            "name": "users",
+            "description": "",
+            "docExpansion": "none"
+        }
+    ],
+    "paths": {
+        "/api/auth/register": {
+            "post": {
+                "summary": "Register User",
+                "tags": ["users"],
+                "description": "",
+                "deprecated": false,
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "name",
+                        "type": "string",
+                        "description": "Name",
+                        "required": true
+                    },
+                    {
+                        "in": "formData",
+                        "name": "email",
+                        "type": "string",
+                        "description": "Email",
+                        "required": true
+                    },
+                    {
+                        "in": "formData",
+                        "name": "password",
+                        "type": "string",
+                        "description": "Password",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "summary": "Login User",
+                "tags": ["users"],
+                "description": "",
+                "deprecated": false,
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "email",
+                        "type": "string",
+                        "description": "Email",
+                        "required": true
+                    },
+                    {
+                        "in": "formData",
+                        "name": "password",
+                        "type": "string",
+                        "description": "Password",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/user": {
+            "get": {
+                "summary": "Get User Details",
+                "tags": ["users"],
+                "description": "",
+                "deprecated": false,
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string",
+                        "description": "token",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "summary": "Logout User",
+                "tags": ["users"],
+                "description": "",
+                "deprecated": false,
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string",
+                        "description": "token",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
